@@ -1,0 +1,86 @@
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between title, menu, and right-aligned icons */
+    align-items: center; /* Centers items vertically */
+    padding: 16px 31px;
+    background-color: #fff; /* Background color for the navbar */
+}
+
+/* Navbar Title */
+.navbar-title {
+    font-size: 2rem;
+    color: #ff7043; /* Orange color for the title */
+    font-weight: bold;
+    text-align: left; /* Ensure the title aligns to the left */
+}
+
+/* Navbar Menu */
+.navbar-menu {
+    display: flex;
+    list-style: none; /* Removes default list styles */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin: 0 20px; /* Space between menu items */
+    font-size: 1.5rem; /* Font size for menu items */
+    color: #333; /* Default color */
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth hover and active effects */
+}
+
+.navbar-menu li:hover {
+    color: #ff7043; /* Hover effect for menu items */
+}
+
+/* Active Menu Item */
+.navbar-menu li.active {
+    color: #ff7043; /* Highlight active menu item */
+    font-weight: bold; /* Optional: Bold text for active item */
+    border-bottom: 2px solid #ff7043; /* Underline active menu item */
+}
+
+/* Right-Aligned Elements */
+.navbar-right {
+    display: flex;
+    align-items: center; /* Vertically centers right-aligned content */
+    margin-left: 20px;
+}
+
+/* Icon Styles */
+.navbar-right img {
+    width: 35px; /* Icon size */
+    height: 35px; /* Icon size */
+    margin-right: 15px; /* Space between icons */
+    cursor: pointer;
+}
+
+.navbar-search-icon {
+    position: relative;
+}
+
+.navbar-search-icon img {
+    width: 35px;
+    height: 35px;
+}
+
+
+/* Sign In Button */
+.sign-in-btn {
+    padding: 6px 15px;
+    border: 2px solid #ff7043; /* Outline color */
+    background-color: #fff; /* White background */
+    color: #1b1715; /* Text color */
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.sign-in-btn:hover {
+    background-color: #ff7043; /* Background color change on hover */
+    color: rgb(243, 240, 240); /* Text color change on hover */
+    border-color: #e64a19; /* Darker border color on hover */
+}
