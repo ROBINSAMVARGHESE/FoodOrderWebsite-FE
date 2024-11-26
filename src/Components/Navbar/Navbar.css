@@ -1,10 +1,10 @@
 /* Navbar Styles */
 .navbar {
-    display: flex;
-    justify-content: space-between; /* Space between title, menu, and right-aligned icons */
-    align-items: center; /* Centers items vertically */
     padding: 16px 31px;
-    background-color: #fff; /* Background color for the navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
 }
 
 /* Navbar Title */
@@ -12,23 +12,19 @@
     font-size: 2rem;
     color: #ff7043; /* Orange color for the title */
     font-weight: bold;
-    text-align: left; /* Ensure the title aligns to the left */
+    text-align: left;
 }
 
 /* Navbar Menu */
 .navbar-menu {
     display: flex;
-    list-style: none; /* Removes default list styles */
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-menu li {
-    margin: 0 20px; /* Space between menu items */
-    font-size: 1.5rem; /* Font size for menu items */
-    color: #333; /* Default color */
+    list-style: none;
+    gap: 20px;
+    color: #49557e;
+    font-size: 1.125rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth hover and active effects */
+    margin: 0;
 }
 
 .navbar-menu li:hover {
@@ -37,50 +33,115 @@
 
 /* Active Menu Item */
 .navbar-menu li.active {
-    color: #ff7043; /* Highlight active menu item */
-    font-weight: bold; /* Optional: Bold text for active item */
-    border-bottom: 2px solid #ff7043; /* Underline active menu item */
-}
-
-/* Right-Aligned Elements */
-.navbar-right {
-    display: flex;
-    align-items: center; /* Vertically centers right-aligned content */
-    margin-left: 20px;
+    color: #ff7043;
+    font-weight: bold;
+    border-bottom: 2px solid #ff7043;
 }
 
 /* Icon Styles */
-.navbar-right img {
-    width: 35px; /* Icon size */
-    height: 35px; /* Icon size */
-    margin-right: 15px; /* Space between icons */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
     cursor: pointer;
+}
+
+.navbar-right img {
+    width: 40px;
+    height: 40px;
 }
 
 .navbar-search-icon {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-search-icon .dot {
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
 }
 
 .navbar-search-icon img {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
 }
-
 
 /* Sign In Button */
-.sign-in-btn {
-    padding: 6px 15px;
-    border: 2px solid #ff7043; /* Outline color */
-    background-color: #fff; /* White background */
-    color: #1b1715; /* Text color */
+.navbar button {
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid tomato;
+    padding: 10px 30px;
+    border-radius: 50px;
     cursor: pointer;
-    border-radius: 4px;
-    font-size: 1.5rem;
-    transition: all 0.3s ease; /* Smooth transition on hover */
+    transition: 0.3s;
 }
 
-.sign-in-btn:hover {
-    background-color: #ff7043; /* Background color change on hover */
-    color: rgb(243, 240, 240); /* Text color change on hover */
-    border-color: #e64a19; /* Darker border color on hover */
+.navbar button:hover {
+    background-color: #fff4f2;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 16px;
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+    }
+
+    .navbar-title {
+        font-size: 1.5rem; /* Reduce font size */
+        margin-bottom: 10px;
+    }
+
+    .navbar-menu {
+        flex-direction: column; /* Stack menu items vertically */
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .navbar-right {
+        flex-direction: column; /* Stack icons vertically */
+        gap: 20px;
+        margin-top: 10px;
+    }
+
+    .navbar-right img {
+        width: 30px; /* Adjust icon size */
+        height: 30px;
+    }
+
+    .navbar button {
+        width: 100%; /* Make button span full width */
+        padding: 10px; /* Adjust padding */
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-title {
+        font-size: 1.2rem; /* Further reduce font size */
+    }
+
+    .navbar-menu {
+        font-size: 1rem; /* Reduce menu font size */
+    }
+
+    .navbar-right img {
+        width: 25px; /* Smaller icons */
+        height: 25px;
+    }
+
+    .navbar button {
+        font-size: 12px; /* Adjust button font size */
+    }
+}
+

@@ -1,12 +1,38 @@
-import React from 'react'
-import Navbar from './Components/Navbar/Navbar'
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';  // Correct imports
+import Navbar from './Components/Navbar/Navbar';
+import Home from './Pages/Home/Home';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
+import Cart from './Pages/Cart/Cart';
+import Footer from './Components/Footer/Footer';
+import LoginPopup from './Components/LoginPopup/LoginPopup';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Exploremenu from './Components/Exploremenu/Exploremenu';
 
 const App = () => {
-  return (
-    <div className='app'>
-      <Navbar/>
-    </div>
-  )
-}
+  const [showLogin, setShowLogin] = useState(false);
+  const [category, setCategory] = useState('all'); // Add category state
 
-export default App
+  return (
+    <>
+      {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
+      <div className='app'>
+        <Navbar setShowLogin={setShowLogin} />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/placeorder' element={<PlaceOrder />} />
+        </Routes>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default App;
+
+
+
+
+
+
