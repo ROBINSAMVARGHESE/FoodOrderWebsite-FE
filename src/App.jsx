@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';  // Correct imports
+import { Routes, Route } from 'react-router-dom';  
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Pages/Home/Home';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
@@ -7,12 +7,14 @@ import Cart from './Pages/Cart/Cart';
 import Footer from './Components/Footer/Footer';
 import LoginPopup from './Components/LoginPopup/LoginPopup';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Exploremenu from './Components/Exploremenu/Exploremenu';
+import { Toaster, toast } from 'react-hot-toast';
+
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
-  const [category, setCategory] = useState('all'); // Add category state
+  const [category, setCategory] = useState('all'); 
 
+  
   return (
     <>
       {showLogin && <LoginPopup setShowLogin={setShowLogin} />}

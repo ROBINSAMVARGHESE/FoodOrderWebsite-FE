@@ -421,28 +421,28 @@ export const food_list = [
   },  
   {
     _id: "33",
-    name: "Mutton Briyani",
+    name: "Mutton Biryani",
     image: food_33,
     price: 250,
-    description: "Spicy mutton biryani with rice.",
+    description: "Spicy mutton biryani with flavorful rice.",
     category: "Briyani",
     discount: 10
   },
   {
     _id: "34",
-    name: "Chicken Briyani",
+    name: "Chicken Biryani",
     image: food_34,
     price: 230,
-    description: "Flavorful chicken biryani with aromatic rice.",
+    description: "Aromatic chicken biryani with fragrant rice.",
     category: "Briyani",
     discount: 15
   },
   {
     _id: "35",
-    name: "Veg Briyani",
+    name: "Veg Biryani",
     image: food_35,
     price: 200,
-    description: "Vegetable biryani with rich spices.",
+    description: "Vegetable biryani with a blend of spices.",
     category: "Briyani",
     discount: 5
   },
@@ -451,8 +451,8 @@ export const food_list = [
     name: "Egg Biryani",
     image: food_36,
     price: 270,
-    description: "Spicy, aromatic biryani with layers of rice and meat.",
+    description: "Aromatic biryani with spiced eggs and rice.",
     category: "Briyani",
     discount: 20
-  },
+  }  
 ];
