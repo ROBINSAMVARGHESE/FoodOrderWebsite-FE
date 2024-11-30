@@ -21,27 +21,30 @@ const LoginPopup = ({ setShowLogin }) => {
         setData((data) => ({ ...data, [name]: value }));
     };
 
-    const onLogin = async (event) => {
-        event.preventDefault();
-        let newUrl = url;
-        if (currState === "Sign Up") {
-            newUrl += "/api/user/register";
+   const onLogin = async (event) => {
+    event.preventDefault();
+    let newUrl = url;
+    if (currState === "Sign Up") {
+        newUrl += "/api/user/register";
+    } else {
+        newUrl += "/api/user/login";
+    }
+
+    try {
+        const response = await axios.post(newUrl, data);
+        if (response.data.success) {
+            setToken(response.data.token);
+            localStorage.setItem("token", response.data.token);
+            setShowLogin(false);
         } else {
-            newUrl += "/api/user/login";
+            alert(response.data.message);
         }
-
-         {
-            const response = await axios.post(newUrl, data);
-            if (response.data.success) {
-                setToken(response.data.token);
-                localStorage.setItem("token", response.data.token);
-                setShowLogin(false);
-            } else {
-                alert(response.data.message);
-            }
-        } 
-    };
-
+    } catch (error) {
+        console.error("An error occurred during login:", error);
+        alert("Something went wrong. Please try again.");
+    }
+};
+                                                                        
     return (
         <div className="login-popup">
             <form onSubmit={onLogin} className="login-popup-container">
